@@ -14,7 +14,7 @@ const rooms = new Map();
 
 io.on('connection', (socket) => {
   socket.on('join-room', (room, callback) => {
-    const roomName = String(room || '').trim().toUpper
+    const roomName = String(room || '').trim().toUpperCase()
       .replace(/[^A-Z0-9]/g, '').slice(0, 8);
     if (!roomName) return callback?.({ ok: false, error: 'Invalid room code' });
 
