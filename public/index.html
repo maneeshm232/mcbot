@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Hotspot Share</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand"><span class="brand-icon">⇄</span><span>Hotspot Share</span></div>
+      <span id="connectionBadge" class="badge">Connecting</span>
+    </header>
+
+    <section id="setupView" class="card">
+      <div id="senderPanel">
+        <p class="eyebrow">SEND FROM THIS DEVICE</p>
+        <h1>Share files with another device</h1>
+        <p class="muted">Both devices must be connected to the same 2.4 or 5 GHz Wi‑Fi network.</p>
+
+        <div class="room-row">
+          <div>
+            <span class="label">ROOM CODE</span>
+            <strong id="roomCode" class="room-code">————</strong>
+          </div>
+          <button id="copyLink" class="secondary" type="button">Copy link</button>
+        </div>
+
+        <div id="qr" class="qr"></div>
+        <p id="waitingText" class="status">Waiting for another device…</p>
+
+        <label class="file-button">
+          Choose files
+          <input id="fileInput" type="file" multiple />
+        </label>
+      </div>
+
+      <div id="receiverPanel" hidden>
+        <p class="eyebrow">RECEIVE ON THIS DEVICE</p>
+        <h1>Connected to sender</h1>
+        <p class="muted">Keep this page open. Received files will download automatically.</p>
+        <div class="connected-mark">✓</div>
+      </div>
+    </section>
+
+    <section id="transferCard" class="card transfer-card" hidden>
+      <div class="transfer-heading">
+        <div>
+          <p class="eyebrow">TRANSFER</p>
+          <h2 id="transferName">Preparing…</h2>
+        </div>
+        <button id="cancelButton" class="danger" type="button">Cancel</button>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      <div class="transfer-meta"><span id="progressText">0%</span><span id="speedText"></span></div>
+    </section>
+
+    <p class="privacy">Files go directly between browsers. The server only relays connection setup.</p>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, system-ui, -apple-system, sans-serif; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top, #1e293b 0, #090e1a 55%, #060913 100%); color: #f8fafc; }
+.shell { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 40px; }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+.brand-icon { display:grid; place-items:center; width:36px; height:36px; border-radius:10px; background:#2563eb; }
+.badge { padding: 7px 10px; border-radius: 999px; background: #1e293b; color: #94a3b8; font-size: 12px; }
+.badge.online { background: #15382c; color: #6ee7b7; }
+.card { background: rgba(15, 23, 42, .92); border: 1px solid #263449; border-radius: 20px; padding: 28px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+.eyebrow, .label { color: #60a5fa; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+h1 { font-size: clamp(28px, 8vw, 40px); line-height: 1.05; margin: 10px 0 14px; }
+h2 { margin: 8px 0 0; font-size: 18px; }
+.muted { color: #94a3b8; line-height: 1.55; }
+.room-row { display:flex; align-items:center; justify-content:space-between; margin:22px 0 12px; border-top:1px solid #263449; border-bottom:1px solid #263449; padding:16px 0; }
+.room-row div { display:flex; flex-direction:column; gap:5px; }
+.room-code { font-size:25px; letter-spacing:.12em; }
+button, .file-button { border:0; border-radius:10px; padding:12px 14px; font-weight:750; cursor:pointer; }
+button:disabled { opacity:.45; cursor:not-allowed; }
+.secondary { background:#334155; color:white; }
+.file-button { display:block; text-align:center; background:#2563eb; margin-top:14px; }
+.file-button input { display:none; }
+.qr { width:192px; height:192px; margin:20px auto 10px; background:white; padding:8px; border-radius:12px; }
+.status { text-align:center; color:#94a3b8; font-size:14px; }
+.connected-mark { width:72px; height:72px; display:grid; place-items:center; margin:28px auto 4px; border-radius:50%; background:#15382c; color:#6ee7b7; font-size:36px; }
+.transfer-card { margin-top:14px; }
+.transfer-heading { display:flex; justify-content:space-between; align-items:center; }
+.danger { background:#3f1d2d; color:#fda4af; }
+.progress-track { height:10px; margin-top:20px; border-radius:999px; background:#1e293b; overflow:hidden; }
+.progress-bar { width:0; height:100%; border-radius:999px; background:linear-gradient(90deg,#2563eb,#22d3ee); transition:width .12s; }
+.transfer-meta { display:flex; justify-content:space-between; margin-top:8px; color:#94a3b8; font-size:13px; }
+.privacy { margin:18px auto 0; max-width:430px; text-align:center; color:#64748b; font-size:12px; }
